@@ -1,0 +1,64 @@
+#message {
+    position: absolute;
+    width: auto;
+    height: 70%;
+    right: -50%;
+    font-size: 18px;
+    color: #000000;
+    font-family: "黑体";
+    box-sizing: border-box;
+    
+}
+
+
+#message ul li {
+    position: absolute;
+    margin: 25px 3px;
+    width: 18px;
+    text-align: center;
+    word-wrap: break-word;
+    font-family: "宋体";
+    font-size: 1rem;
+    line-height: 1.5rem;
+
+}
+
+#message ul li:nth-child(1) {
+    right: 5px
+}
+
+#message ul li:nth-child(2) {
+    right: 30px
+}
+
+#message ul li:nth-child(3) {
+    right: 55px
+}
+
+#message ul li:nth-child(4) {
+    right: 80px
+}
+
+#message ul li:nth-child(5) {
+    right: 105px
+}
+
+#message ul li:nth-child(6) {
+    right: 130px
+}
+
+#message ul li:nth-child(7) {
+    right: 155px
+}
+
+#message ul li:nth-child(8) {
+    right: 180px
+}
+
+#message ul li:nth-child(9) {
+    right: 205px
+}
+
+#message ul li:nth-child(10) {
+    right: 230px
+}

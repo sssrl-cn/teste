@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8">
+	<title></title>
+	<meta name="robots" content="noindex, nofollow">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, minimal-ui">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="../../assets/js/jquery-3.2.1.min.js"></script>
+	<script src="../../assets/js/clipboard.min.js"></script>
+</head>
+<body>
+	
+	<footer id="footer">
+		<div id="DonateText" class="tr3">Love You</div>
+		<ul id="donateBox" class="list pos-f tr3">
+			<li id="BTC" data-footnote="在线支付">
+				<button id="BTCBn" alt="Copy to clipboard">Bitcoin</button>
+			</li>
+			<li id="AliPay" data-footnote="QQ援助">AliPay</li>
+			<li id="WeChat" data-footnote="微信援助">WeChat</li>
+			<li id="PayPal" data-footnote="支付宝援助">PayPal</li>
+		</ul>
+		<div id="QRBox" class="pos-f left-100">
+			<div id="MainBox"></div>
+		</div>
+	</footer>
+
+	<script>
+		jQuery(document).ready(function() {
+		var QRBox	=	$('#QRBox');
+		var MainBox	=	$('#MainBox');
+		var BTCQR	=	'';
+		var PayBaby	=	'../../assets/img/Pay/zfb.jpg';
+		var Wechat	=	'../../assets/img/Pay/wx.png';
+		var Qqpay	=	"../../assets/img/Pay/qq.png";
+		function showQR(QR) {
+			if (QR) {
+				MainBox.css('background-image','url('+QR+')');
+			}
+			$('#DonateText,#donateBox,#github').addClass('blur');
+			QRBox.fadeIn(300,function(argument) {
+				MainBox.addClass('showQR');
+			});
+		}
+	
+		$('#donateBox>li').click(function(event) {
+			var thisID	=	$(this).attr('id');
+			if (thisID === 'BTC') {
+				showQR(BTCQR);
+				new Clipboard('#BTCBn');
+			} else if (thisID === 'AliPay') {
+				showQR(PayBaby);
+			} else if (thisID === 'WeChat') {
+				showQR(Wechat);
+			} else if (thisID === 'PayPal') {
+				showQR(Qqpay);
+			}
+		});
+	
+		MainBox.click(function(event) {
+			MainBox.removeClass('showQR').addClass('hideQR');
+			setTimeout (function(a) {
+				QRBox.fadeOut(300,function(argument) {
+					MainBox.removeClass('hideQR');
+				});
+				$('#DonateText,#donateBox,#github').removeClass('blur');
+			},600);
+	
+		});
+	});
+	</script>
+</body>
+</html>

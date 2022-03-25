@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./Demo_files/style_1.css">
+    <link rel="stylesheet" href="./Demo_files/style_2.css">
+    <link rel="stylesheet" href="./Demo_files/style_3.css">
+</head>
+<body style="">
+      <div id="sum">
+          <div id="message">
+              <ul>
+                  <li class="msgs" v-for="(item,index) in Arrays">{{item}}</li>
+              </ul>
+          </div>
+
+          <a id="shade"></a><!-- 年份 -->
+          
+          <div id="second">
+              <ul>                  
+                  <!-- 秒 -->
+                  <li v-for="item in flag">{{item}}</li>
+              </ul>
+          </div>
+          <div id="minute">
+              <ul>                  
+                  <!-- 分 -->
+                  <li v-for="item in flag_minute">{{item}}</li>
+              </ul>
+          </div>
+          <div id="hour">
+              <ul>
+                  <!-- 小时 -->
+                  <li v-for="item in flag_hour">{{item}}</li>
+              </ul>
+          </div>
+  
+          <div id="year">
+              <ul>
+                  <strong><li id="yearAll">天祈</li></strong>
+              </ul>
+          </div>
+  
+          <div id="mouth">
+              <ul>
+                  <!-- 月份 -->
+                  <li v-for="item in flag_mouth">{{item.name}}</li>
+              </ul>
+          </div>
+  
+          <div id="solar">
+              <ul><!-- 24节气 -->
+                  <li v-for="(item,index) in flag_solar" :key="index" v-on:mouseover="showMsg(index)" v-on:mouseout="hideMsg()" class="mm">
+                      {{item.name}}</li>
+              </ul>
+          </div>
+  
+          <div id="data">
+              <ul>
+                  <!-- 几号 -->
+                  <li v-for="item in flag_data">{{item.name}}</li>
+              </ul>
+          </div>
+  
+          <div id="AP">
+              <ul>
+                  <!-- 上午还是下午呢! -->
+                  <li v-for="item in flag_AP">{{item.name}}</li>
+              </ul>
+          </div>
+      </div>
+  
+<script src="https://s1.pstatp.com/cdn/expire-1-M/vue/2.2.2/vue.min.js"></script>
+<script src="./Demo_files/2.js"></script>
+</body>
+</html>
